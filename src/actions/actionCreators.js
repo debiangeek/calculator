@@ -1,15 +1,29 @@
-import { SET_TOTAL, INPUT_CHANGE } from './actionConst';
+import { INPUT, LASTINPUT, FORMULA, IS_SOLVED } from './actionConst';
 
-export const setTotal = (total) => {
+export const inputAction = (input) => {
     return {
-        type: SET_TOTAL,
-        payload: total
+        type: INPUT,
+        payload: input
     };
 };
 
-export const inputChange = (input) => {
+export const lastInputAction = (lastinput) => {
     return {
-        type: INPUT_CHANGE,
-        payload: input
+        type: LASTINPUT,
+        payload: lastinput
+    };
+};
+
+export const formulaAction = (formula) => {
+    return {
+        type: FORMULA,
+        payload: formula
+    };
+};
+
+export const isSolvedAction = (value) => {
+    return {
+        type: IS_SOLVED,
+        payload: value
     };
 };

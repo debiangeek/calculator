@@ -16,7 +16,7 @@ class Calculator extends Component {
                     <Display />
                     <div id="input-wrapper" >
                         { INPUTS.map((i) => {
-                            return <InputButton id={i.id} className={i.className} stringName={i.stringName} />
+                            return <InputButton id={i.id} className={i.className} stringName={i.stringName} clickAction={i.onClick} />
                         }) }
                     </div>
                 </div>

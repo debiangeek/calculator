@@ -1,21 +1,33 @@
-import { SET_TOTAL, INPUT_CHANGE } from './../actions/actionConst';
+import { INPUT, LASTINPUT, FORMULA, IS_SOLVED } from './../actions/actionConst';
 
 let initialState = {
     input: '',
-    total: ''
+    lastInput: '',
+    formula: '',
+    solved: false
 };
 
 export default function calcReducer (state = initialState, action) {
     switch (action.type) {
-        case SET_TOTAL:
+        case INPUT:
             return {
-                input: state.input,
-                total: action.payload
+                ...state,
+                input: action.payload
             };
-        case INPUT_CHANGE:
+        case LASTINPUT:
             return {
-                input: action.payload,
-                total: state.total
+                ...state,
+                lastInput: action.payload
+            };
+        case FORMULA:
+            return {
+                ...state,
+                formula: action.payload
+            };
+        case IS_SOLVED:
+            return {
+                ...state,
+                solved: action.payload
             };
         default:
             return state;

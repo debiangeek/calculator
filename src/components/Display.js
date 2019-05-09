@@ -6,9 +6,9 @@ import '../stylesheets/App.css';
 class Display extends Component {
     render() {
         return (
-            <div id="display">
-                <p id="display-input">{ this.props.input }</p>
-                <p id="display-total">{ this.props.total }</p>
+            <div id="display-wrapper">
+                <div id="display-total">{ this.props.formula }</div>
+                <div id="display">{ this.props.input }</div>
             </div>
         );
     };
@@ -16,8 +16,8 @@ class Display extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        input: state.input,
-        total: state.total
+        formula: state.formula,
+        input: state.input
     };
 };
 
